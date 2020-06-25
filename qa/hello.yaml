@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: lasample
+  labels:
+    app: hellolabels
+spec:
+  selector:
+    matchLabels:
+      app: hellolabels
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello-container
+        image: linuxacademycontent/gitops:hellov1.1
